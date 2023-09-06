@@ -12,12 +12,16 @@ public class Citizen : NPC, IKnockbackable
     [SerializeField] private float destinationRadius = 0.7f;
     private bool gawking = false;
 
+    [Header("Player Interaction")]
+    [SerializeField] private float pausePlayerEnergyDecreaseTime = 2f;
+
     public void AddKnockback(Vector2 amount)
     {
         pathFinder.enabled = false;
         myRb.velocity = Vector2.zero;
-        //GetComponent<Collider2D>().enabled = false;
+        this.gameObject.layer = LayerMask.NameToLayer("NpcNoCollide");
         myRb.AddForce(amount, ForceMode2D.Impulse);
+        GameManager.Instance.Player.PauseEnergyDecrease(pausePlayerEnergyDecreaseTime);
         Die();
     }
 

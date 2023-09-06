@@ -32,7 +32,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float energyDeclineRateStandard = 2f;
     [SerializeField] private Image energyFillBarLeft;
     [SerializeField] private Image energyFillBarRight;
+    [SerializeField] private Image energyFlashLeft;
+    [SerializeField] private Image energyFlashRight;
+    [SerializeField] private List<Image> energyFlashBgs = new();
     private bool energyIsDeclining = true;
+    private float energyDecreasePauseCooldownCur = 0f;
     private float energyDeclineRateCur;
     private float energyCur;
     public float EnergyCur { get => energyCur; }
@@ -49,6 +53,7 @@ public class Player : MonoBehaviour
 
         energyCur = energyStart;
         energyDeclineRateCur = energyDeclineRateStandard;
+
     }
 
     private void Update()
@@ -70,14 +75,45 @@ public class Player : MonoBehaviour
 
     private void EnergyManager()
     {
-        if (!energyIsDeclining) return;
+        // Visual Update
+        float flashVisibleAtFinalPercent = 0.2f;
+        float energyPercantageBar = (energyCur * (1+ flashVisibleAtFinalPercent)) / energyMax;
+        float flashThreshhold = (energyCur / energyMax) - (1- flashVisibleAtFinalPercent);
 
+        energyFillBarLeft.fillAmount = energyPercantageBar;
+        energyFillBarRight.fillAmount = energyPercantageBar;
+
+        if (flashThreshhold > 0f)
+        {
+            energyFlashLeft.gameObject.SetActive(true);
+            energyFlashRight.gameObject.SetActive(true);
+            foreach (Image bg in energyFlashBgs) bg.gameObject.SetActive(true);
+
+
+            energyFlashLeft.fillAmount = flashThreshhold * (1/ flashVisibleAtFinalPercent);
+            energyFlashRight.fillAmount = flashThreshhold * (1 / flashVisibleAtFinalPercent);
+        }
+        else {
+            energyFlashLeft.gameObject.SetActive(false);
+            energyFlashRight.gameObject.SetActive(false);
+            foreach (Image bg in energyFlashBgs) bg.gameObject.SetActive(false);
+        }
+
+
+        // Decrease is paused
+        if (!energyIsDeclining) 
+        {
+            if (energyDecreasePauseCooldownCur <= 0f)
+                energyIsDeclining = true;
+            else
+                energyDecreasePauseCooldownCur -= Time.deltaTime;
+            
+            return; // Note return.
+        }
+
+        // Reduce energy over time
         energyCur -= energyDeclineRateCur * Time.deltaTime;
         energyCur = Mathf.Clamp(energyCur, 0, energyMax);
-
-        float energyPercantage = energyCur / energyMax;
-        energyFillBarLeft.fillAmount = energyPercantage;
-        energyFillBarRight.fillAmount = energyPercantage;
     }
 
     private void MovementManagaer()
@@ -117,15 +153,6 @@ public class Player : MonoBehaviour
 
     private void RotationManager()
     {
-        /* Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-         Vector2 dist = transform.position - mousePos;
-         dist= dist.normalized;
-
-         transform.rotation = Quaternion.LookRotation(Vector3.forward * dist);
-
-         Debug.Log(dist);*/
-
         float angle = GameManager.Instance.AngleToCam(transform.position);
 
         if (angle >= -45f && angle <= 45f)
@@ -160,6 +187,12 @@ public class Player : MonoBehaviour
             heldItem.Use();
         }
 
+    }
+
+    public void PauseEnergyDecrease(float seconds)
+    {
+        energyIsDeclining = false;
+        energyDecreasePauseCooldownCur = seconds;
     }
 
     public void AddEnergy(float amount)

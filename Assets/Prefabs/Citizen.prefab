@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4609465142739144441}
   - component: {fileID: 6185548980347225334}
   - component: {fileID: 974553808472337417}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Citizen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   mySr: {fileID: 0}
   recoveryAtVelocity: 0.5
   destinationRadius: 2
+  pausePlayerEnergyDecreaseTime: 0.3
 --- !u!114 &4609465142739144441
 MonoBehaviour:
   m_ObjectHideFlags: 0

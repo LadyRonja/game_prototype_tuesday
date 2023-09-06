@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject GameOverUI;
 
+    [SerializeField] bool checkGameOver = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -41,7 +43,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-       // CheckGameOver();
+        if(checkGameOver)
+            CheckGameOver();
+
         if (GameOverUI.activeInHierarchy)
         {
             if (Input.GetKey(KeyCode.R))
