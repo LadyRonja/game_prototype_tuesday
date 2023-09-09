@@ -1165,7 +1165,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9122,7 +9122,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pathfinding Assisstant
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10991,7 +10991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezPaMZ1fAIAAC8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWRjU1Cby1f6SEJE9rJxRdhr7EGWfJIcoBk+O9dyTZ26Ynl7dfbtyt/ES5NBalVeqN59qwyIN9HxNnk26h3PsGZHZTc8U/oYt55ZgsXxHzMG7NcIR64NKNKsJqnP+RBuGCKYC15rnS5yg6wUMYahHMmDKBLK+uyJUJfI3LGn/HcpVzQCh+c9YnWnI6uaKYgLeg+NKCTMHyIZ2GbENEJjefRPGrTgsk0CgL6EEarMZ35ErVMBSsryNw8g0pB0NaIYx8ncdQ2xHlSJQQ3LU9iL5XX4Y1dnAoZZzizJ0YnMQIF8ENh3QTD1Nc8N2BbSTS7LLlG8Zqa5KdqFC2ZOTa0PpioXZdZ5Ak1NZ//c48D7861Kp+6tgF1LWzB0yNSTJmxA8WH8LJnHnhxTkwc2V7AewHyRW20qmWGTqtrl1obCJf939tkiwLSY483VO/AuurV7hbcrdfNcPXDnxeCl3svZNQAO6G82P4qQONafiFhfzOmLYGoY/HHwG92GB5X61hzbSy62imlo7dXtXahZI2GEz6t7UJpCR5tOVcgmbCXLVax9wu88w263nnWzL2itnfr6x7HXYqH+3hK71xbdfK7Cif+5E2hTs9gitfaCi6h5+0cL6jUQknZnNhQlS5tV+ucpYO0Q82zf4+LsHiaz+h+H+TTMJtN2TgP2Tyfspg+RrMp3T8Sf31c4qhMbBuurUK4N9kXl3hp3fdltNGs8ueeaXba8M9SDVTnMle7VAPI16bCjThobIKPMltlHDXagbVc+o2Tr4QIlR4hS26FEj/p6mw1S/oqCan4h7IOScjCf1AS4uDbNW81fHA4ueZdsSu5/gVQSwMEFAAACAgAAAgh7JPkD9ZtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKiqXGamUFSkmGasVGKmXGibppRomWacaKpgYWJmbFBkoVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7M9oxnV8AgAALwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7JPkD9ZtAAAAeAAAAAkAJAAAAAAAAAAAAAAAyQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAACBAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIexmR26YfAIAADAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWRjU1Cby1f6SEJE9rJxRdhr7EGWfJIcoBk+O9dyTZ26Ynl7dfbtyt/ES5NBalVeqN59qwyIN9HxNnk26h3PsGZHZTc8U/oYt55ZgsXxHzMG7NcIR64NKNKsJqnP+RBuGCKYC15rnS5yg6wUMYahHMmDKBLK+uyJUJfI3LGn/HcpVzQCh+c9YnWnI6uaKYgLeg+NKCTMHyIZ2GbENEJjefRPGrTgsk0CgL6EEarMZ35ErVMBSsryNw8g0pB0NaIYx8ncdQ2xHlSJQQ3LU9iL5XX4Y1dnAoZZzizJ0YnMQIF8ENh3QTD1Nc8N2BbSTS7LLlG8Zqa5KdqFC2ZOTa0PpioXZdZ5Ak1NZ//c48D7861Kp+6tgF1LWzB0yNSTJmxA8WH8LJnHnhxTkwc2V7AewHyRW20qmWGTqtrl1obCJf939tkiwLSY483VO/AuurV7hbcrdfNcPXDnxeCl3svZNQAO6G82P4qQONafiFhfzOmLYGoY/HHwG92GB5X61hzbSy62imlo7dXtXahZI2GEz6t7UJpCR5tOVcgmbCXLVax9wu88w263nnWzL2itnfr6x7HXYqH+3hK71xbdfK7Cif+5E2hTs9gitfaCi6h5+0cL6jUQknZnNhQlS5tV+ucpYO0Q82zf4+LsHiaz+h+H+TTMJtN2TgP2Tyfspg+RrMp3T8Sf31c4qhMbBuurUK4N9kXl3hp3fdltNGs8ueeaXba8M9SDQlymatdqgHka1Pixhw0dsFXma0yjiLtwFou/crJV0KESo+QJbeeiR91dbaaJX2VhFT8Q1mHJGThvygJcfDtnLcaPjicXPOu2JVc/wJQSwMEFAAACAgAAAgh7JPkD9ZtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKiqXGamUFSkmGasVGKmXGibppRomWacaKpgYWJmbFBkoVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7GZHbph8AgAAMAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7JPkD9ZtAAAAeAAAAAkAJAAAAAAAAAAAAAAAyQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAACBAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -11203,7 +11203,7 @@ GameObject:
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11221,7 +11221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 844238090}
   GameOverUI: {fileID: 1307370045}
-  checkGameOver: 0
+  checkGameOver: 1
 --- !u!4 &1811510836
 Transform:
   m_ObjectHideFlags: 0
@@ -11615,7 +11615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5792697557700462142, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.16666669
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_Size.x
@@ -24862,8 +24862,24 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_TileAssetArray.Array.data[1].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_TileIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_RefCount
-      value: 826
+      value: 827
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_TileAssetArray.Array.data[1].m_RefCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_RefCount
@@ -24875,7 +24891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
-      value: 825
+      value: 826
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_Tiles.Array.data[1].second.m_AllTileFlags
@@ -31484,6 +31504,10 @@ PrefabInstance:
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_Tiles.Array.data[1652].second.m_AllTileFlags
       value: 1073741825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_TileSpriteIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7037282166225146924, guid: 5ff47612f654f9948935ff1a2b76799f, type: 3}
       propertyPath: m_Tiles.Array.data[1].second.m_TileObjectToInstantiateIndex
@@ -38458,6 +38482,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7674769425546820449, guid: d1a0798b04d25374db63dd6fc9bdafb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636177142037251315, guid: d1a0798b04d25374db63dd6fc9bdafb3, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8636177142037251315, guid: d1a0798b04d25374db63dd6fc9bdafb3, type: 3}

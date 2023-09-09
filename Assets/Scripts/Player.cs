@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     private float energyDecreasePauseCooldownCur = 0f;
     private float energyDeclineRateCur;
     private float energyCur;
+    [Range(0, 1)] private float flashShowUpAtPercantage = 0.8f;
     public float EnergyCur { get => energyCur; }
 
 
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
 
         // Debug Purposes
         if(Input.GetKeyDown(KeyCode.L)) {
-            energyCur = energyMax;
+            energyCur = energyMax * 0.8f;
         }
     }
 
@@ -76,22 +77,26 @@ public class Player : MonoBehaviour
     private void EnergyManager()
     {
         // Visual Update
-        float flashVisibleAtFinalPercent = 0.2f;
-        float energyPercantageBar = (energyCur * (1+ flashVisibleAtFinalPercent)) / energyMax;
-        float flashThreshhold = (energyCur / energyMax) - (1- flashVisibleAtFinalPercent);
+        float energyPercentageOfTotal = energyCur / energyMax; // % energy
+        float flashThreshold = flashShowUpAtPercantage; // The % of energy at which the flash bar shows up
+        float energyPercantageBar = energyCur / (energyMax * flashThreshold); // The inner bars show the first x% of the total energy
+
 
         energyFillBarLeft.fillAmount = energyPercantageBar;
         energyFillBarRight.fillAmount = energyPercantageBar;
 
-        if (flashThreshhold > 0f)
+        if (energyPercentageOfTotal >= flashThreshold)
         {
             energyFlashLeft.gameObject.SetActive(true);
             energyFlashRight.gameObject.SetActive(true);
             foreach (Image bg in energyFlashBgs) bg.gameObject.SetActive(true);
 
+            // The flash bar displays the last x% of the total energy
+            // Thus we calculate how many % of the last x% the player currently has
+            float energyFlashPercantage = 1 - ((1 - energyPercentageOfTotal) / (1 - flashThreshold));
 
-            energyFlashLeft.fillAmount = flashThreshhold * (1/ flashVisibleAtFinalPercent);
-            energyFlashRight.fillAmount = flashThreshhold * (1 / flashVisibleAtFinalPercent);
+            energyFlashLeft.fillAmount = energyFlashPercantage;
+            energyFlashRight.fillAmount = energyFlashPercantage;
         }
         else {
             energyFlashLeft.gameObject.SetActive(false);
@@ -123,27 +128,20 @@ public class Player : MonoBehaviour
 
         // Up
         if (Input.GetKey(KeyCode.W))
-        {
             vertical += new Vector2(0, 1);
-        }
 
         // Down
         if (Input.GetKey(KeyCode.S))
-        {
             vertical -= new Vector2(0, 1);
-        }
 
         // Left
         if (Input.GetKey(KeyCode.D))
-        {
             horizontal += new Vector2(1, 0);
-        }
 
         // Right
-        if (Input.GetKey(KeyCode.A))
-        {
-            horizontal -= new Vector2(1, 0);
-        }
+        if (Input.GetKey(KeyCode.A)) 
+           horizontal -= new Vector2(1, 0);
+        
 
 
         // Combine and normalize vectors to avoid "diagonal speed-up"
