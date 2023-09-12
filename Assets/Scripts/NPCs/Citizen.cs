@@ -11,13 +11,17 @@ public class Citizen : NPC, IKnockbackable
     [SerializeField] private float recoveryAtVelocity = 0.5f;
     [SerializeField] private float destinationRadius = 0.7f;
     private bool gawking = false;
+    [Space]
+    [SerializeField] private bool chanceSpawnNewOnDefeat = true;
 
     [Header("Player Interaction")]
     [SerializeField] private float pausePlayerEnergyDecreaseTime = 2f;
 
     public void AddKnockback(Vector2 amount)
     {
-        pathFinder.enabled = false;
+        if (pathFinder != null)
+            pathFinder.enabled = false;
+        myRb.bodyType = RigidbodyType2D.Dynamic;
         myRb.velocity = Vector2.zero;
         this.gameObject.layer = LayerMask.NameToLayer("NpcNoCollide");
         myRb.AddForce(amount, ForceMode2D.Impulse);
@@ -38,8 +42,10 @@ public class Citizen : NPC, IKnockbackable
 
     private void FixedUpdate()
     {
+       
         if (alive)
-        {
+        { 
+            if (pathFinder == null) return;
             MovementManager();
         }
         else
@@ -98,7 +104,10 @@ public class Citizen : NPC, IKnockbackable
         mySr.color = new Color(mySr.color.r, mySr.color.g, mySr.color.b, Mathf.Clamp(mySr.color.a - Time.deltaTime * 1.5f, 0, 255));
         if (mySr.color.a <= 0f)
         {
-            if (Random.Range(0, 2) == 1) EnemySpawner.Instance.SpawnEnemyAtRandomPos();
+            if (chanceSpawnNewOnDefeat)
+            {
+                if (Random.Range(0, 2) == 1) EnemySpawner.Instance.SpawnEnemyAtRandomPos();
+            }
             Destroy(this.gameObject);
         }
     }

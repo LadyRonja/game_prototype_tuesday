@@ -25,8 +25,10 @@ public class Player : MonoBehaviour
 
     [Header("Abilities & Equipment")]
     [SerializeField] private Item heldItem;
+    public bool canUseItems = true;
 
     [Header("Energy")]
+    [SerializeField] private bool trackEnergy = true;
     [SerializeField] private float energyMax = 100f;
     [SerializeField] private float energyStart = 50f;
     [SerializeField] private float energyDeclineRateStandard = 2f;
@@ -60,12 +62,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         ItemUseManager();
-        EnergyManager();
 
-        // Debug Purposes
-        if(Input.GetKeyDown(KeyCode.L)) {
-            energyCur = energyMax * 0.8f;
-        }
+        if (trackEnergy)
+            EnergyManager();
+
     }
 
     private void FixedUpdate()
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
     {
         if (heldItem == null) return;
 
-        if (Input.GetMouseButtonDown((int)MouseButton.Left))
+        if (Input.GetMouseButtonDown((int)MouseButton.Left) && canUseItems)
         {
             heldItem.Use();
         }

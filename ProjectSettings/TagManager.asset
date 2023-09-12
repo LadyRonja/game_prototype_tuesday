@@ -36,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ultimate Front
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 159474863
+    locked: 0
+  - name: Foreground
+    uniqueID: 113100459
     locked: 0

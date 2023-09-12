@@ -7,7 +7,7 @@ public class CamController : MonoBehaviour
     [Header("Follow")]
     [SerializeField] float camSpeed = 3f;
     private Transform cam;
-    private Transform player;
+    [SerializeField] private Transform player;
 
     [Header("Shake")]
     [SerializeField] private float shakeStabalizer = 5f;
@@ -34,7 +34,10 @@ public class CamController : MonoBehaviour
         }
 
         cam = Camera.main.transform;
-        player = GameManager.Instance.Player.transform;
+        if (player == null)
+        {
+            player = GameManager.Instance.Player.transform;
+        }
 
         #region Null Checks
         if (cam == null)
