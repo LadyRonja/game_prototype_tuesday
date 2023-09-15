@@ -24,6 +24,7 @@ public class MainMenuController : MonoBehaviour
             startText.text = "Start Game";
             p.canUseItems = false;
             arrow.enabled = true;
+            p.CanMove = false;
         }
     }
 

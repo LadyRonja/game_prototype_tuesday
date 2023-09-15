@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [Header("Movement")]
+    public bool CanMove = true;
     [SerializeField] private float moveSpeedBase = 10f;
     private Rigidbody2D rb;
     public enum FaceDirections { Left, Right, Up, Down }
@@ -75,7 +76,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovementManagaer();
+        if (CanMove)
+            MovementManagaer();
+
         RotationManager();
     }
 
