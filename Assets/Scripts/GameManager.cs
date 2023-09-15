@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject GameOverUI;
 
     [SerializeField] bool checkGameOver = true;
+    [SerializeField] float timeForLevel = 30f;
+    float timerCur = 0f;
+    [SerializeField] Image timerFill;
 
     private void Awake()
     {
@@ -43,7 +47,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(checkGameOver)
+        TimerManager();
+
+        if (checkGameOver)
             CheckGameOver();
 
         if (GameOverUI.activeInHierarchy)
@@ -58,10 +64,20 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameOver()
     {
-        if (Player.EnergyCur <= 0)
+        //if (Player.EnergyCur <= 0)
+        //    GameOver();
+
+        if (timerCur >= timeForLevel)
         {
             GameOver();
         }
+    }
+
+    private void TimerManager()
+    {
+        timerCur += Time.deltaTime;
+        if (timerFill != null)
+            timerFill.fillAmount = timerCur / timeForLevel;
     }
 
     private void GameOver()

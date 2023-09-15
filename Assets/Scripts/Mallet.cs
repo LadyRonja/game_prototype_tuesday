@@ -28,6 +28,7 @@ public class Mallet : Item
     [SerializeField] private float screenShakeOnHit = 10f;
 
 
+
     private void Start()
     {
         if (hurtbox == null)
@@ -134,6 +135,7 @@ public class Mallet : Item
         kb.AddKnockback(dir * knockbackAmount);
         CamController.Instance.ShakeScreen(screenShakeOnHit);
         GameManager.Instance.Player.AddEnergy(energyGainOnHit);
+
     }
 
 

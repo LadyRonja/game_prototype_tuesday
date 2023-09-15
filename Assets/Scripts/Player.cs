@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Sprite spriteLeft;
     [SerializeField] private Sprite spriteRight;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip malletSwing;
+    private AudioSource myAudioSource;
 
     [Header("Abilities & Equipment")]
     [SerializeField] private Item heldItem;
@@ -48,8 +51,10 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb= GetComponent<Rigidbody2D>();
-        if (rb == null) Debug.LogError("No rigidbody found!"); 
+        myAudioSource = rb.GetComponent<AudioSource>();
+        if (rb == null) Debug.LogError("No rigidbody found!");
         if (sr == null)  Debug.LogError("No Sprite Renderer found!"); 
+        if (myAudioSource == null) Debug.LogError("No AudioSource found!");
         if (spriteDown == null || spriteUp == null || spriteLeft == null || spriteRight == null)   Debug.LogError("Missing Sprites!");
         if (energyFillBarLeft == null) Debug.LogError("No Energy Fill Bar Left found!");
         if (energyFillBarRight == null) Debug.LogError("No Energy Fill Bar Right found!");
@@ -176,6 +181,7 @@ public class Player : MonoBehaviour
 
     }
 
+
     private void ItemUseManager()
     {
         if (heldItem == null) return;
@@ -183,6 +189,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown((int)MouseButton.Left) && canUseItems)
         {
             heldItem.Use();
+            myAudioSource.clip = malletSwing;
+            myAudioSource.Play();
         }
 
     }
